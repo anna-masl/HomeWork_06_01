@@ -4,7 +4,6 @@
 
 const lineUserInput = prompt('Enter your text');
 const lettersUserInput = prompt('Enter letters for deleting');
-let massiveOfLetters;
 
 debugger;
 console.log(lineUserInput, lettersUserInput);
@@ -14,7 +13,7 @@ function isNotEmptyString(lineUserInput) {
 }
 function makeMassiveOfLetters(lettersUserInput) {
   if (isNotEmptyString(lettersUserInput)) {
-    massiveOfLetters = lettersUserInput.split('');
+    const massiveOfLetters = lettersUserInput.split('');
     console.log(massiveOfLetters);
     return massiveOfLetters;
   }
@@ -24,7 +23,7 @@ function getCleanRow(lineUserInput, massiveOfLetters) {
   if (isNotEmptyString(lineUserInput)) {
     let outputLine = lineUserInput;
     for (let i = 0; i < lettersUserInput.length; i++) {
-      let symbolForReplace = massiveOfLetters[i];
+      const symbolForReplace = massiveOfLetters[i];
       outputLine = outputLine.replaceAll(symbolForReplace, '');
     }
     alert(outputLine);
@@ -33,4 +32,4 @@ function getCleanRow(lineUserInput, massiveOfLetters) {
 }
 
 getCleanRow(lineUserInput, makeMassiveOfLetters(lettersUserInput));
-console.log(lineUserInput, massiveOfLetters);
+console.log(lineUserInput, makeMassiveOfLetters(lettersUserInput));
